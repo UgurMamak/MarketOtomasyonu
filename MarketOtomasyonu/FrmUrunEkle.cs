@@ -11,6 +11,8 @@ using MaterialSkin.Controls;
 using MaterialSkin;
 using MetroFramework.Controls;
 using MetroFramework;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace MarketOtomasyonu
 {
@@ -23,11 +25,14 @@ namespace MarketOtomasyonu
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
-        }
 
+        }
+        VtIslemler prc = new VtIslemler();
         private void BtnEkle_Click(object sender, EventArgs e)
         {
-
+            //string barkod, string urunad, string fiyat
+            prc.PrcUrunEkle(txtBarkod.Text,TxtUrunAd.Text,Convert.ToDouble(TxtBirimFyt.Text));
+            MessageBox.Show("Eklendi.");
         }
     }
 }
