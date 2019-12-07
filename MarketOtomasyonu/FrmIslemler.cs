@@ -83,7 +83,8 @@ namespace MarketOtomasyonu
                 LblAdFyt.Text = "0";
             }
             LblToplamFiyat.Text = ToplamFiyat.ToString();
-
+            
+            if(TxtBarkod.TextLength==13) TxtBarkod.SelectAll();
 
         }
     }

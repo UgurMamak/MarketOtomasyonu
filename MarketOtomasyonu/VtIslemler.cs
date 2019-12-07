@@ -55,6 +55,12 @@ namespace MarketOtomasyonu
             cmd.ExecuteNonQuery();
        }
 
+        //Markette bulunan ürünleri listelemek için.      
+        public SqlDataAdapter PrcUrunListele()
+        {
+            SqlDataAdapter urunler = new SqlDataAdapter("Select * from TblUrunler", Baglanti);
+            return urunler;
+        }
 
     }
 }

@@ -16,7 +16,7 @@ namespace MarketOtomasyonu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmUrunEkle());
+            Application.Run(new FrmIslemler());
         }
     }
 }

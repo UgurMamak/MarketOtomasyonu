@@ -28,11 +28,28 @@ namespace MarketOtomasyonu
 
         }
         VtIslemler prc = new VtIslemler();
+        SqlDataReader reader;
         private void BtnEkle_Click(object sender, EventArgs e)
         {
             //string barkod, string urunad, string fiyat
             prc.PrcUrunEkle(txtBarkod.Text,TxtUrunAd.Text,Convert.ToDouble(TxtBirimFyt.Text));
             MessageBox.Show("Eklendi.");
+            FnkListele();
+        }
+
+        void FnkListele()
+        {
+            SqlDataAdapter da = prc.PrcUrunListele();
+            DataSet ds = new DataSet();
+            da.Fill(ds, "TblKayitlar");
+            DgwUrunler.DataSource = ds.Tables[0];
+           
+        }
+
+        private void FrmUrunEkle_Load(object sender, EventArgs e)
+        {
+            FnkListele();
+            
         }
     }
 }
