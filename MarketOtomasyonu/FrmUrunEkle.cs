@@ -57,5 +57,16 @@ namespace MarketOtomasyonu
             yeni.Show();
             this.Close();
         }
+
+        void FnkUrunKontrol()
+        {
+
+        }
+
+
+        private void txtBarkod_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
