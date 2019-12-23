@@ -39,12 +39,13 @@
             this.TxtUrunAd = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtBirimFyt = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.DgwUrunler = new MetroFramework.Controls.MetroGrid();
+            this.BtnGeri = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.DgwUrunler)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnEkle
             // 
-            this.BtnEkle.Location = new System.Drawing.Point(117, 224);
+            this.BtnEkle.Location = new System.Drawing.Point(117, 299);
             this.BtnEkle.Name = "BtnEkle";
             this.BtnEkle.Size = new System.Drawing.Size(171, 50);
             this.BtnEkle.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             // txtBarkod
             // 
-            this.txtBarkod.Location = new System.Drawing.Point(117, 96);
+            this.txtBarkod.Location = new System.Drawing.Point(117, 171);
             this.txtBarkod.Name = "txtBarkod";
             this.txtBarkod.Size = new System.Drawing.Size(171, 20);
             this.txtBarkod.TabIndex = 1;
@@ -65,7 +66,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 97);
+            this.materialLabel1.Location = new System.Drawing.Point(12, 172);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(56, 19);
@@ -78,7 +79,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(12, 140);
+            this.materialLabel2.Location = new System.Drawing.Point(12, 215);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(66, 19);
@@ -91,7 +92,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(12, 184);
+            this.materialLabel3.Location = new System.Drawing.Point(12, 259);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(80, 19);
@@ -102,7 +103,7 @@
             // 
             this.TxtUrunAd.Depth = 0;
             this.TxtUrunAd.Hint = "";
-            this.TxtUrunAd.Location = new System.Drawing.Point(117, 140);
+            this.TxtUrunAd.Location = new System.Drawing.Point(117, 215);
             this.TxtUrunAd.MouseState = MaterialSkin.MouseState.HOVER;
             this.TxtUrunAd.Name = "TxtUrunAd";
             this.TxtUrunAd.PasswordChar = '\0';
@@ -117,7 +118,7 @@
             // 
             this.TxtBirimFyt.Depth = 0;
             this.TxtBirimFyt.Hint = "";
-            this.TxtBirimFyt.Location = new System.Drawing.Point(117, 184);
+            this.TxtBirimFyt.Location = new System.Drawing.Point(117, 259);
             this.TxtBirimFyt.MouseState = MaterialSkin.MouseState.HOVER;
             this.TxtBirimFyt.Name = "TxtBirimFyt";
             this.TxtBirimFyt.PasswordChar = '\0';
@@ -155,7 +156,7 @@
             this.DgwUrunler.EnableHeadersVisualStyles = false;
             this.DgwUrunler.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.DgwUrunler.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DgwUrunler.Location = new System.Drawing.Point(294, 97);
+            this.DgwUrunler.Location = new System.Drawing.Point(294, 172);
             this.DgwUrunler.Name = "DgwUrunler";
             this.DgwUrunler.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -171,11 +172,22 @@
             this.DgwUrunler.Size = new System.Drawing.Size(494, 150);
             this.DgwUrunler.TabIndex = 7;
             // 
+            // BtnGeri
+            // 
+            this.BtnGeri.Location = new System.Drawing.Point(3, 66);
+            this.BtnGeri.Name = "BtnGeri";
+            this.BtnGeri.Size = new System.Drawing.Size(121, 43);
+            this.BtnGeri.TabIndex = 8;
+            this.BtnGeri.Text = "Geri Dön";
+            this.BtnGeri.UseSelectable = true;
+            this.BtnGeri.Click += new System.EventHandler(this.BtnGeri_Click);
+            // 
             // FrmUrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnGeri);
             this.Controls.Add(this.DgwUrunler);
             this.Controls.Add(this.TxtBirimFyt);
             this.Controls.Add(this.TxtUrunAd);
@@ -203,5 +215,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtUrunAd;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtBirimFyt;
         private MetroFramework.Controls.MetroGrid DgwUrunler;
+        private MetroFramework.Controls.MetroButton BtnGeri;
     }
 }

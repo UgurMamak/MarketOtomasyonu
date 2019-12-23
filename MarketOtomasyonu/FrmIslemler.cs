@@ -87,5 +87,12 @@ namespace MarketOtomasyonu
             if(TxtBarkod.TextLength==13) TxtBarkod.SelectAll();
 
         }
+
+        private void BtnGeri_Click(object sender, EventArgs e)
+        {
+            Form1 yeni = new Form1();
+            yeni.Show();
+            this.Close();
+        }
     }
 }

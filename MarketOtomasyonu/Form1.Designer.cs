@@ -40,6 +40,7 @@
             this.metroButton1.TabIndex = 3;
             this.metroButton1.Text = "ÜRÜN EKLE";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton2
             // 
@@ -49,6 +50,7 @@
             this.metroButton2.TabIndex = 4;
             this.metroButton2.Text = "HESAPLA";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // Form1
             // 

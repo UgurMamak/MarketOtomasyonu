@@ -48,8 +48,14 @@ namespace MarketOtomasyonu
 
         private void FrmUrunEkle_Load(object sender, EventArgs e)
         {
-            FnkListele();
-            
+            FnkListele();          
+        }
+
+        private void BtnGeri_Click(object sender, EventArgs e)
+        {
+            Form1 yeni = new Form1();
+            yeni.Show();
+            this.Close();
         }
     }
 }

@@ -24,5 +24,19 @@ namespace MarketOtomasyonu
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            FrmUrunEkle frm = new FrmUrunEkle();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            FrmIslemler frm = new FrmIslemler();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
