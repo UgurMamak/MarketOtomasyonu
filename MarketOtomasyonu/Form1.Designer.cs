@@ -1,6 +1,6 @@
 ﻿namespace MarketOtomasyonu
 {
-    partial class Form1
+    partial class BtnKullanici
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.BtnUrunIslem = new MetroFramework.Controls.MetroButton();
+            this.BtnHesapla = new MetroFramework.Controls.MetroButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // metroButton1
+            // BtnUrunIslem
             // 
-            this.metroButton1.Location = new System.Drawing.Point(57, 114);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(128, 39);
-            this.metroButton1.TabIndex = 3;
-            this.metroButton1.Text = "ÜRÜN EKLE";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.BtnUrunIslem.Location = new System.Drawing.Point(141, 87);
+            this.BtnUrunIslem.Name = "BtnUrunIslem";
+            this.BtnUrunIslem.Size = new System.Drawing.Size(128, 39);
+            this.BtnUrunIslem.TabIndex = 1;
+            this.BtnUrunIslem.Text = "ÜRÜN İŞLEMLERİ";
+            this.BtnUrunIslem.UseSelectable = true;
+            this.BtnUrunIslem.Click += new System.EventHandler(this.metroButton1_Click);
             // 
-            // metroButton2
+            // BtnHesapla
             // 
-            this.metroButton2.Location = new System.Drawing.Point(244, 110);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(103, 43);
-            this.metroButton2.TabIndex = 4;
-            this.metroButton2.Text = "HESAPLA";
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.BtnHesapla.Location = new System.Drawing.Point(141, 151);
+            this.BtnHesapla.Name = "BtnHesapla";
+            this.BtnHesapla.Size = new System.Drawing.Size(128, 43);
+            this.BtnHesapla.TabIndex = 2;
+            this.BtnHesapla.Text = "HESAPLA";
+            this.BtnHesapla.UseSelectable = true;
+            this.BtnHesapla.Click += new System.EventHandler(this.metroButton2_Click);
             // 
-            // Form1
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(396, 68);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(10, 10);
+            this.textBox1.TabIndex = 0;
+            // 
+            // BtnKullanici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 194);
-            this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(422, 277);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.BtnHesapla);
+            this.Controls.Add(this.BtnUrunIslem);
+            this.Name = "BtnKullanici";
+            this.Text = "ANA SAYFA";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton BtnUrunIslem;
+        private MetroFramework.Controls.MetroButton BtnHesapla;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

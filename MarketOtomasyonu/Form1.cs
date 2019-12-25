@@ -14,15 +14,17 @@ using MetroFramework;
 
 namespace MarketOtomasyonu
 {
-    public partial class Form1 : MaterialForm
+    public partial class BtnKullanici : MaterialForm
     {
-        public Form1()
+        public BtnKullanici()
         {
             InitializeComponent();
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
+           
+
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -30,6 +32,7 @@ namespace MarketOtomasyonu
             FrmUrunEkle frm = new FrmUrunEkle();
             frm.Show();
             this.Hide();
+            
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -37,6 +40,12 @@ namespace MarketOtomasyonu
             FrmIslemler frm = new FrmIslemler();
             frm.Show();
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+            //if (FrmGiris.KullaniciTip.ToString() == "kullanıcı") BtnUrunIslem.Visible = false;
         }
     }
 }

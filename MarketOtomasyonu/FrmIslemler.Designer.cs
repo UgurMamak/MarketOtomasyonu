@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             this.TxtBarkod = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.LblBarkod = new MaterialSkin.Controls.MaterialLabel();
@@ -38,11 +36,6 @@
             this.LblUrun = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.LblToplamFiyat = new MaterialSkin.Controls.MaterialLabel();
-            this.DgwHarcamalar = new MetroFramework.Controls.MetroGrid();
-            this.barkodd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urunadi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fyt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdFyt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.LblBirimFiyat = new MaterialSkin.Controls.MaterialLabel();
             this.txtAdet = new System.Windows.Forms.TextBox();
@@ -50,7 +43,15 @@
             this.LblAdFyt = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.BtnGeri = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwHarcamalar)).BeginInit();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.BtnFaturaKes = new MaterialSkin.Controls.MaterialFlatButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunAd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirimFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FiyatAdet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtBarkod
@@ -60,6 +61,7 @@
             this.TxtBarkod.Size = new System.Drawing.Size(214, 20);
             this.TxtBarkod.TabIndex = 0;
             this.TxtBarkod.TextChanged += new System.EventHandler(this.TxtBarkod_TextChanged);
+            this.TxtBarkod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBarkod_KeyPress);
             // 
             // materialLabel1
             // 
@@ -139,74 +141,6 @@
             this.LblToplamFiyat.TabIndex = 6;
             this.LblToplamFiyat.Text = ".........................";
             // 
-            // DgwHarcamalar
-            // 
-            this.DgwHarcamalar.AllowUserToResizeRows = false;
-            this.DgwHarcamalar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DgwHarcamalar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgwHarcamalar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DgwHarcamalar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwHarcamalar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DgwHarcamalar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgwHarcamalar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.barkodd,
-            this.urunadi,
-            this.fyt,
-            this.AdFyt});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwHarcamalar.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DgwHarcamalar.EnableHeadersVisualStyles = false;
-            this.DgwHarcamalar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.DgwHarcamalar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DgwHarcamalar.Location = new System.Drawing.Point(318, 143);
-            this.DgwHarcamalar.Name = "DgwHarcamalar";
-            this.DgwHarcamalar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwHarcamalar.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.DgwHarcamalar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DgwHarcamalar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwHarcamalar.Size = new System.Drawing.Size(442, 253);
-            this.DgwHarcamalar.TabIndex = 7;
-            // 
-            // barkodd
-            // 
-            this.barkodd.HeaderText = "Barkod";
-            this.barkodd.Name = "barkodd";
-            // 
-            // urunadi
-            // 
-            this.urunadi.HeaderText = "Ürün Adı";
-            this.urunadi.Name = "urunadi";
-            // 
-            // fyt
-            // 
-            this.fyt.HeaderText = "Birim Fiyat";
-            this.fyt.Name = "fyt";
-            // 
-            // AdFyt
-            // 
-            this.AdFyt.HeaderText = "Fiyat X Adet";
-            this.AdFyt.Name = "AdFyt";
-            // 
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
@@ -282,19 +216,82 @@
             // 
             // BtnGeri
             // 
-            this.BtnGeri.Location = new System.Drawing.Point(0, 63);
+            this.BtnGeri.Location = new System.Drawing.Point(0, 62);
             this.BtnGeri.Name = "BtnGeri";
-            this.BtnGeri.Size = new System.Drawing.Size(110, 39);
+            this.BtnGeri.Size = new System.Drawing.Size(94, 28);
             this.BtnGeri.TabIndex = 14;
-            this.BtnGeri.Text = "GeriDon";
+            this.BtnGeri.Text = "AnaSayfaya Dön";
             this.BtnGeri.UseSelectable = true;
             this.BtnGeri.Click += new System.EventHandler(this.BtnGeri_Click);
+            // 
+            // BtnFaturaKes
+            // 
+            this.BtnFaturaKes.AutoSize = true;
+            this.BtnFaturaKes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnFaturaKes.Depth = 0;
+            this.BtnFaturaKes.Location = new System.Drawing.Point(167, 409);
+            this.BtnFaturaKes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BtnFaturaKes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnFaturaKes.Name = "BtnFaturaKes";
+            this.BtnFaturaKes.Primary = false;
+            this.BtnFaturaKes.Size = new System.Drawing.Size(92, 36);
+            this.BtnFaturaKes.TabIndex = 16;
+            this.BtnFaturaKes.Text = "Fatura Kes";
+            this.BtnFaturaKes.UseVisualStyleBackColor = true;
+            this.BtnFaturaKes.Click += new System.EventHandler(this.BtnFaturaKes_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Barkod,
+            this.UrunAd,
+            this.BirimFiyat,
+            this.FiyatAdet});
+            this.dataGridView1.Location = new System.Drawing.Point(350, 143);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(551, 230);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // Barkod
+            // 
+            this.Barkod.HeaderText = "Barkod";
+            this.Barkod.Name = "Barkod";
+            // 
+            // UrunAd
+            // 
+            this.UrunAd.HeaderText = "Ürün Adı";
+            this.UrunAd.Name = "UrunAd";
+            // 
+            // BirimFiyat
+            // 
+            this.BirimFiyat.HeaderText = "Birim Fiyat";
+            this.BirimFiyat.Name = "BirimFiyat";
+            // 
+            // FiyatAdet
+            // 
+            this.FiyatAdet.HeaderText = "FiyatXAdet";
+            this.FiyatAdet.Name = "FiyatAdet";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(460, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
             // 
             // FrmIslemler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(913, 460);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.BtnFaturaKes);
             this.Controls.Add(this.BtnGeri);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.LblAdFyt);
@@ -302,7 +299,6 @@
             this.Controls.Add(this.txtAdet);
             this.Controls.Add(this.LblBirimFiyat);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.DgwHarcamalar);
             this.Controls.Add(this.LblToplamFiyat);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.LblUrun);
@@ -313,7 +309,7 @@
             this.Name = "FrmIslemler";
             this.Text = "FrmIslemler";
             this.Load += new System.EventHandler(this.FrmIslemler_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgwHarcamalar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,17 +324,20 @@
         private MaterialSkin.Controls.MaterialLabel LblUrun;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel LblToplamFiyat;
-        private MetroFramework.Controls.MetroGrid DgwHarcamalar;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel LblBirimFiyat;
         private System.Windows.Forms.TextBox txtAdet;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel LblAdFyt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barkodd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn urunadi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fyt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdFyt;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MetroFramework.Controls.MetroButton BtnGeri;
+        private System.IO.Ports.SerialPort serialPort1;
+        private MaterialSkin.Controls.MaterialFlatButton BtnFaturaKes;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barkod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UrunAd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BirimFiyat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FiyatAdet;
+        private System.Windows.Forms.Label label1;
     }
 }

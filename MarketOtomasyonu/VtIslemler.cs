@@ -34,6 +34,15 @@ namespace MarketOtomasyonu
             if (cmd.Connection.State == ConnectionState.Closed) cmd.Connection.Open();
         }
 
+        public SqlDataReader PrcGiris(String KulAdi, String Parola)//Kullanıcı adı veşifre kontrolü
+        {
+            Connection("PrcGiris");
+            cmd.Parameters.AddWithValue("@KulAdi", KulAdi);
+            cmd.Parameters.AddWithValue("@Parola", Parola);
+            reader = cmd.ExecuteReader();
+            return reader;
+        }
+
 
         public SqlDataReader PrcListele()
         {
@@ -61,6 +70,30 @@ namespace MarketOtomasyonu
             SqlDataAdapter urunler = new SqlDataAdapter("Select * from TblUrunler", Baglanti);
             return urunler;
         }
+
+
+        public void prcUrunUpdate(string barkod, string urunad, double fiyat)
+        {
+            
+                Connection("UrunUpdate");
+                cmd.Parameters.AddWithValue("@Barkod", barkod);
+                cmd.Parameters.AddWithValue("@UrunAdi", urunad);
+                cmd.Parameters.AddWithValue("@Fiyat", fiyat);
+                cmd.ExecuteNonQuery();
+            //    if (cmd.Connection.State == ConnectionState.Open) cmd.Connection.Close();           
+        }
+
+
+        public void PrcUrunSil(string barkod)
+        {                      
+                Connection("PrcUrunSil");
+                cmd.Parameters.AddWithValue("@Barkod", barkod);//Yazdığımız ıdyi silmeye yarar. 
+                cmd.ExecuteNonQuery();
+                if (cmd.Connection.State == ConnectionState.Open) cmd.Connection.Close();                      
+        }
+
+
+
 
     }
 }
