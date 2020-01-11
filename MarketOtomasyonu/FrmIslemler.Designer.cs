@@ -49,14 +49,14 @@
             this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UrunAd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BirimFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunadet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FiyatAdet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtBarkod
             // 
-            this.TxtBarkod.Location = new System.Drawing.Point(58, 143);
+            this.TxtBarkod.Location = new System.Drawing.Point(16, 128);
             this.TxtBarkod.Name = "TxtBarkod";
             this.TxtBarkod.Size = new System.Drawing.Size(214, 20);
             this.TxtBarkod.TabIndex = 0;
@@ -69,7 +69,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(54, 190);
+            this.materialLabel1.Location = new System.Drawing.Point(12, 175);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(56, 19);
@@ -82,7 +82,7 @@
             this.LblBarkod.Depth = 0;
             this.LblBarkod.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblBarkod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblBarkod.Location = new System.Drawing.Point(163, 190);
+            this.LblBarkod.Location = new System.Drawing.Point(121, 175);
             this.LblBarkod.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblBarkod.Name = "LblBarkod";
             this.LblBarkod.Size = new System.Drawing.Size(109, 19);
@@ -95,7 +95,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(54, 237);
+            this.materialLabel3.Location = new System.Drawing.Point(12, 222);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(40, 19);
@@ -108,7 +108,7 @@
             this.LblUrun.Depth = 0;
             this.LblUrun.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblUrun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblUrun.Location = new System.Drawing.Point(163, 237);
+            this.LblUrun.Location = new System.Drawing.Point(121, 222);
             this.LblUrun.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblUrun.Name = "LblUrun";
             this.LblUrun.Size = new System.Drawing.Size(109, 19);
@@ -121,7 +121,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(54, 377);
+            this.materialLabel5.Location = new System.Drawing.Point(12, 362);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(96, 19);
@@ -134,7 +134,7 @@
             this.LblToplamFiyat.Depth = 0;
             this.LblToplamFiyat.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblToplamFiyat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblToplamFiyat.Location = new System.Drawing.Point(163, 377);
+            this.LblToplamFiyat.Location = new System.Drawing.Point(121, 362);
             this.LblToplamFiyat.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblToplamFiyat.Name = "LblToplamFiyat";
             this.LblToplamFiyat.Size = new System.Drawing.Size(109, 19);
@@ -147,7 +147,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(54, 289);
+            this.materialLabel2.Location = new System.Drawing.Point(12, 274);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(80, 19);
@@ -160,7 +160,7 @@
             this.LblBirimFiyat.Depth = 0;
             this.LblBirimFiyat.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblBirimFiyat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblBirimFiyat.Location = new System.Drawing.Point(163, 289);
+            this.LblBirimFiyat.Location = new System.Drawing.Point(121, 274);
             this.LblBirimFiyat.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblBirimFiyat.Name = "LblBirimFiyat";
             this.LblBirimFiyat.Size = new System.Drawing.Size(109, 19);
@@ -169,7 +169,7 @@
             // 
             // txtAdet
             // 
-            this.txtAdet.Location = new System.Drawing.Point(100, 117);
+            this.txtAdet.Location = new System.Drawing.Point(58, 102);
             this.txtAdet.Name = "txtAdet";
             this.txtAdet.Size = new System.Drawing.Size(60, 20);
             this.txtAdet.TabIndex = 10;
@@ -181,7 +181,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(54, 334);
+            this.materialLabel4.Location = new System.Drawing.Point(12, 319);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(89, 19);
@@ -194,7 +194,7 @@
             this.LblAdFyt.Depth = 0;
             this.LblAdFyt.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblAdFyt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblAdFyt.Location = new System.Drawing.Point(163, 334);
+            this.LblAdFyt.Location = new System.Drawing.Point(121, 319);
             this.LblAdFyt.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblAdFyt.Name = "LblAdFyt";
             this.LblAdFyt.Size = new System.Drawing.Size(109, 19);
@@ -207,7 +207,7 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(54, 118);
+            this.materialLabel6.Location = new System.Drawing.Point(12, 103);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(40, 19);
@@ -224,12 +224,17 @@
             this.BtnGeri.UseSelectable = true;
             this.BtnGeri.Click += new System.EventHandler(this.BtnGeri_Click);
             // 
+            // serialPort1
+            // 
+            this.serialPort1.ReceivedBytesThreshold = 10;
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
             // BtnFaturaKes
             // 
             this.BtnFaturaKes.AutoSize = true;
             this.BtnFaturaKes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnFaturaKes.Depth = 0;
-            this.BtnFaturaKes.Location = new System.Drawing.Point(167, 409);
+            this.BtnFaturaKes.Location = new System.Drawing.Point(125, 394);
             this.BtnFaturaKes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnFaturaKes.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnFaturaKes.Name = "BtnFaturaKes";
@@ -249,10 +254,11 @@
             this.Barkod,
             this.UrunAd,
             this.BirimFiyat,
+            this.urunadet,
             this.FiyatAdet});
-            this.dataGridView1.Location = new System.Drawing.Point(350, 143);
+            this.dataGridView1.Location = new System.Drawing.Point(350, 80);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(551, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(551, 134);
             this.dataGridView1.TabIndex = 17;
             // 
             // Barkod
@@ -270,26 +276,21 @@
             this.BirimFiyat.HeaderText = "Birim Fiyat";
             this.BirimFiyat.Name = "BirimFiyat";
             // 
+            // urunadet
+            // 
+            this.urunadet.HeaderText = "Adet";
+            this.urunadet.Name = "urunadet";
+            // 
             // FiyatAdet
             // 
             this.FiyatAdet.HeaderText = "FiyatXAdet";
             this.FiyatAdet.Name = "FiyatAdet";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(460, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "label1";
             // 
             // FrmIslemler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 460);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnFaturaKes);
             this.Controls.Add(this.BtnGeri);
@@ -307,7 +308,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.TxtBarkod);
             this.Name = "FrmIslemler";
-            this.Text = "FrmIslemler";
+            this.Text = "HESAPLA";
             this.Load += new System.EventHandler(this.FrmIslemler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -337,7 +338,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Barkod;
         private System.Windows.Forms.DataGridViewTextBoxColumn UrunAd;
         private System.Windows.Forms.DataGridViewTextBoxColumn BirimFiyat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urunadet;
         private System.Windows.Forms.DataGridViewTextBoxColumn FiyatAdet;
-        private System.Windows.Forms.Label label1;
     }
 }

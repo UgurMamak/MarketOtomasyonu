@@ -30,6 +30,7 @@ namespace MarketOtomasyonu
         VtIslemler prc = new VtIslemler();
         SqlDataReader reader;
         public static string KullaniciTip,KulAd;
+        public static int KulId;
         bool kontrol = false;
 
         private void BtnGiris_Click(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace MarketOtomasyonu
                     kontrol = true;
                     KullaniciTip = reader[1].ToString();
                     KulAd = reader[2].ToString();
+                    KulId = Convert.ToInt32(reader[3].ToString());
                     if(KullaniciTip=="kullanıcı")
                     {
                         FrmIslemler islem = new FrmIslemler();

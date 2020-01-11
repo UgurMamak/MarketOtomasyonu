@@ -31,6 +31,7 @@
             this.BtnUrunIslem = new MetroFramework.Controls.MetroButton();
             this.BtnHesapla = new MetroFramework.Controls.MetroButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btncikis = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // BtnUrunIslem
@@ -61,11 +62,22 @@
             this.textBox1.Size = new System.Drawing.Size(10, 10);
             this.textBox1.TabIndex = 0;
             // 
+            // btncikis
+            // 
+            this.btncikis.Location = new System.Drawing.Point(359, 82);
+            this.btncikis.Name = "btncikis";
+            this.btncikis.Size = new System.Drawing.Size(57, 33);
+            this.btncikis.TabIndex = 3;
+            this.btncikis.Text = "ÇIKIŞ";
+            this.btncikis.UseSelectable = true;
+            this.btncikis.Click += new System.EventHandler(this.btncikis_Click);
+            // 
             // BtnKullanici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 277);
+            this.Controls.Add(this.btncikis);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BtnHesapla);
             this.Controls.Add(this.BtnUrunIslem);
@@ -81,6 +93,7 @@
         private MetroFramework.Controls.MetroButton BtnUrunIslem;
         private MetroFramework.Controls.MetroButton BtnHesapla;
         private System.Windows.Forms.TextBox textBox1;
+        private MetroFramework.Controls.MetroButton btncikis;
     }
 }
 

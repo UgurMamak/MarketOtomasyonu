@@ -93,6 +93,93 @@ namespace MarketOtomasyonu
         }
 
 
+        //TblUrunler2 tablosundaki ürünleri listemek için kullanılan metot
+        public SqlDataReader PrcTblUrunler2_Select()
+        {
+            try
+            {
+                Connection("PrcTblUrunler_Select");
+                reader = cmd.ExecuteReader();
+            }
+            catch (Exception) { }
+            return reader;
+        }
+
+        //TblUrunler2 tablosuna insert işlemi yapabilmek için oluşturduğum metot
+        public void PrcTblUrunler2_Insert(List<string>Bilgiler)
+        {
+            Connection("PrcTblUrunler2_Insert");
+            cmd.Parameters.AddWithValue("@Barkod", Bilgiler[0].ToString());
+            cmd.Parameters.AddWithValue("@UrunAdi", Bilgiler[1].ToString());
+            cmd.Parameters.AddWithValue("@GelisFiyat", Convert.ToDouble(Bilgiler[2].ToString()));
+            cmd.Parameters.AddWithValue("@SatisFiyat", Convert.ToDouble(Bilgiler[3].ToString()));
+            cmd.Parameters.AddWithValue("@Stok", Convert.ToInt32(Bilgiler[4].ToString()));
+            cmd.ExecuteNonQuery();
+
+        }
+
+        
+
+        //faturadaki ürünleri veri tabanında stok ve diğer bilgilerinin güncelleme işlemi
+       // public void PrcTblUrunler2_Update(string barkod, string urunad, double gelisfiyat, double satisfiyat, int stok)
+      public void PrcTblUrunler2_Update(List<string>Bilgiler)
+      {
+            Connection("PrcTblUrunler2_Update");
+            cmd.Parameters.AddWithValue("@Barkod", Bilgiler[0].ToString());
+            cmd.Parameters.AddWithValue("@UrunAdi", Bilgiler[1].ToString());
+            cmd.Parameters.AddWithValue("@GelisFiyat", Convert.ToDouble(Bilgiler[2].ToString()));
+            cmd.Parameters.AddWithValue("@SatisFiyat", Convert.ToDouble(Bilgiler[3].ToString()));
+            cmd.Parameters.AddWithValue("@Stok", Convert.ToInt32(Bilgiler[4].ToString()));
+            cmd.ExecuteNonQuery();
+      }
+
+
+
+        public void PrcTblUrunler2_Update2(List<string> Bilgiler)
+        {
+            Connection("PrcTblUrunler2_Update2");
+            cmd.Parameters.AddWithValue("@Barkod", Bilgiler[0].ToString());
+            cmd.Parameters.AddWithValue("@UrunAdi", Bilgiler[1].ToString());
+            cmd.Parameters.AddWithValue("@GelisFiyat", Convert.ToDouble(Bilgiler[2].ToString()));
+            cmd.Parameters.AddWithValue("@SatisFiyat", Convert.ToDouble(Bilgiler[3].ToString()));
+            cmd.Parameters.AddWithValue("@Stok", Convert.ToInt32(Bilgiler[4].ToString()));
+            cmd.ExecuteNonQuery();
+        }
+
+        public void PrcTblIslemler_Insert(int KulId, DateTime tarih,int urunid, string barkod,int adet)
+        {
+            Connection("PrcTblIslemler_Insert");
+
+           
+            cmd.Parameters.AddWithValue("@KulId",KulId);
+            cmd.Parameters.AddWithValue("@islemtarih",tarih);
+            cmd.Parameters.AddWithValue("@urunid",urunid);
+            cmd.Parameters.AddWithValue("@barkod",barkod);
+            cmd.Parameters.AddWithValue("@adet", adet);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void PrcTblUrunler2_Delete(string barkod)
+        {
+            Connection("PrcTblUrunler2_Delete");
+            cmd.Parameters.AddWithValue("@barkod", barkod);//Yazdığımız ıdyi silmeye yarar. 
+            cmd.ExecuteNonQuery();
+            if (cmd.Connection.State == ConnectionState.Open) cmd.Connection.Close();
+        }
+
+
+        public SqlDataReader PrcTblIslemler_Select()
+        {
+            try
+            {
+                Connection("PrcTblIslemler_Select");
+                reader = cmd.ExecuteReader();
+            }
+            catch (Exception) { }
+            return reader;
+        }
+    
+
 
 
     }

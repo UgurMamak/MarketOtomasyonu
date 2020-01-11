@@ -31,8 +31,7 @@ namespace MarketOtomasyonu
         {
             FrmUrunEkle frm = new FrmUrunEkle();
             frm.Show();
-            this.Hide();
-            
+            this.Hide();            
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -46,6 +45,13 @@ namespace MarketOtomasyonu
         {
             
             //if (FrmGiris.KullaniciTip.ToString() == "kullanıcı") BtnUrunIslem.Visible = false;
+        }
+
+        private void btncikis_Click(object sender, EventArgs e)
+        {
+            FrmGiris yeni = new FrmGiris();
+            yeni.Show();
+            this.Close();
         }
     }
 }

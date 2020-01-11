@@ -27,7 +27,7 @@ namespace MarketOtomasyonu
             skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
         }
 
-
+        
         VtIslemler prc = new VtIslemler();
         SqlDataReader reader;
         bool kontrol = false;
@@ -45,30 +45,58 @@ namespace MarketOtomasyonu
             {
                 BtnGuncelle.Enabled = true;
                 BtnSil.Enabled = true;
+                BtnEkle.Enabled = true;
             }
             else
             {
                 BtnGuncelle.Enabled = false;
                 BtnSil.Enabled = false;
+                BtnEkle.Enabled = true;
             }
         }
+
+     
+
+
 
 
         private void BtnEkle_Click(object sender, EventArgs e)
         {
-            FnkUrunKontrol();
-            if (kontrol)
+             if (txtBarkod.Text ==""|| TxtBirimFyt.Text =="" || TxtUrunAd.Text =="")
+           { MetroMessageBox.Show(this, "\n", "Boş alan bırakmayınız", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+           
+           
+
+           /* bool bos = false;
+
+            foreach (Control item in this.Controls)
             {
-                MetroMessageBox.Show(this, "\n", "Ürün veri tabanında ekli", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (item is TextBox)
+                {
+
+                    if (item.Text == "") bos = true;
+                }
             }
+            */
+           // if(bos) MetroMessageBox.Show(this, "\n", "Boş alan bırakmayınız.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             else
             {
-                prc.PrcUrunEkle(txtBarkod.Text, TxtUrunAd.Text, Convert.ToDouble(TxtBirimFyt.Text));
-                kontrol = false;
-                fnkTemizle();
-                butonKontrol();
-                FnkListele();
-            }                                               
+               // FnkUrunKontrol();
+                if (kontrol)
+                {
+                    MetroMessageBox.Show(this, "\n", "Ürün veri tabanında ekli", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    prc.PrcUrunEkle(txtBarkod.Text, TxtUrunAd.Text, Convert.ToDouble(TxtBirimFyt.Text));
+                    kontrol = false;
+                    fnkTemizle();
+                    butonKontrol();
+                    FnkListele();
+                }
+            }
+          
         }
 
         void FnkListele()
@@ -93,6 +121,7 @@ namespace MarketOtomasyonu
 
         void FnkUrunKontrol()
         {
+            
             SqlDataReader reader = prc.PrcListele();
             while(reader.Read())
             {
@@ -103,7 +132,13 @@ namespace MarketOtomasyonu
                     kontrol = true;
                     break;
                 }
+               else
+                {
+                    TxtUrunAd.Text ="";
+                    TxtBirimFyt.Text ="";
+                }
             }
+            
         }
            
         private void txtBarkod_TextChanged(object sender, EventArgs e)
@@ -111,6 +146,7 @@ namespace MarketOtomasyonu
             kontrol = false;           
             FnkUrunKontrol();
             butonKontrol();
+            
             
             if (txtBarkod.TextLength == 13) txtBarkod.SelectAll();//dün gece ekledin unutmaaaaaaa
         }
@@ -132,6 +168,13 @@ namespace MarketOtomasyonu
         private void txtBarkod_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void DgwUrunler_DoubleClick(object sender, EventArgs e)
+        {
+            txtBarkod.Text=DgwUrunler.Rows[DgwUrunler.CurrentRow.Index].Cells["Barkod"].Value.ToString();
+            TxtUrunAd.Text=DgwUrunler.Rows[DgwUrunler.CurrentRow.Index].Cells["UrunAdi"].Value.ToString();
+            TxtBirimFyt.Text=DgwUrunler.Rows[DgwUrunler.CurrentRow.Index].Cells["Fiyat"].Value.ToString();
         }
     }
 }

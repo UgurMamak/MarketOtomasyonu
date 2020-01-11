@@ -31,6 +31,8 @@ namespace MarketOtomasyonu
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
             if (FrmGiris.KullaniciTip.ToString() == "kullanıcı") BtnGeri.Visible = false;
+            //Application.Idle += new EventHandler(FnkBarkodYakala);
+           
         }
 
         
@@ -40,67 +42,43 @@ namespace MarketOtomasyonu
         bool kontrol = false;
         int adet = 1;
         string port;
+        List<string> Barkodlar = new List<string>();
+        List<int> Adetler = new List<int>();
+        List<int> UrunIdler = new List<int>();
 
-        
-        void FnkPortBul()
-        {
-            for (int i = 0; i < System.IO.Ports.SerialPort.GetPortNames().Length; i++)
-            { port = System.IO.Ports.SerialPort.GetPortNames()[i]; }
-            try
-            {
-                label1.Text = port;
-                serialPort1.PortName = port;
-                if (!serialPort1.IsOpen) serialPort1.Open();                
-            }
-            catch
-            {
-                // label1.Text = "hata";
-            }
-        }
-        
 
         private void FrmIslemler_Load(object sender, EventArgs e)
         {
-            FnkPortBul();
-                           
-            //Application.Idle += new EventHandler(FnkBarkodYakala);
+           
         }
-        /*
-          void FnkBarkodYakala(object sender, EventArgs e)
-          {
-              label1.Text = serialPort1.ReadLine();
-              System.Threading.Thread.Sleep(100);
-          }
-          */
+       
+      
 
 
         void FnkHesapla()
         {
-            adet = Convert.ToInt32(txtAdet.Text); //üründen kaç adet aldığına bakıyoruz.
-            
+            adet = Convert.ToInt32(txtAdet.Text); //üründen kaç adet aldığına bakıyoruz.        
             LblBarkod.Text = TxtBarkod.Text; //girilen barkodu yazdırma işlemi
-            reader = prc.PrcListele();
+            reader = prc.PrcTblUrunler2_Select();
             while(reader.Read())
             {
                 if(reader[1].ToString()==TxtBarkod.Text)
                 {
-                    kontrol = true;
-                    LblUrun.Text = reader[2].ToString();//Ürün bigisini yazdırdım.
-                    double fiyat = Convert.ToDouble(reader[3].ToString())*adet;//adet*fiyat işlemi
-
-                    ToplamFiyat = ToplamFiyat + fiyat;
-                    LblAdFyt.Text = fiyat.ToString();
-                    LblBirimFiyat.Text = reader[3].ToString();
-
-                    //ToplamFiyat = (ToplamFiyat + Convert.ToDouble(reader[3].ToString()))*adet;
-                    //LblAdFyt.Text = (adet * Convert.ToDouble(reader[3].ToString())).ToString();
-                   // LblBirimFiyat.Text = reader[3].ToString();//ürünün birim fiyatı                   
-                    //datagridwiew'e yazdırma işlemi
-                   // DgwHarcamalar.Rows.Add(TxtBarkod.Text,reader[2].ToString(),reader[3].ToString(),fiyat);
-                    dataGridView1.Rows.Add(TxtBarkod.Text, reader[2].ToString(), reader[3].ToString(), fiyat);
-
+                    
+                    if (Convert.ToInt32(reader[5].ToString()) > 0 && Convert.ToInt32(reader[5].ToString())-adet>0)
+                    {
+                        Barkodlar.Add(TxtBarkod.Text);
+                        Adetler.Add(Convert.ToInt32(txtAdet.Text));
+                        UrunIdler.Add(Convert.ToInt32(reader[0].ToString()));
+                        kontrol = true;
+                        LblUrun.Text = reader[2].ToString();//Ürün bigisini yazdırdım.
+                        double fiyat = Convert.ToDouble(reader[4].ToString()) * adet;//adet*fiyat işlemi
+                        ToplamFiyat = ToplamFiyat + fiyat;
+                        LblAdFyt.Text = fiyat.ToString();
+                        LblBirimFiyat.Text = reader[4].ToString();
+                        dataGridView1.Rows.Add(TxtBarkod.Text, reader[2].ToString(), reader[4].ToString(), adet, fiyat);
+                    }
                 }
-
             }
         }
 
@@ -110,7 +88,8 @@ namespace MarketOtomasyonu
             FnkHesapla();
             if(kontrol==false)
             {
-                LblUrun.Text = "Okutulan Ürün Bulunmamaktadır.";
+             //   LblUrun.Text = "Okutulan Ürün Sisteme kayıtlı değil veya stokta tükenmiştir.";
+                LblUrun.Text = "Okutulan ürün stokta bulunmamaktadır veya ürünün stoktaki miktarından fazla ürün istendi yapıldı.";
                 LblToplamFiyat.Text = "0";
                 LblBirimFiyat.Text = "0";
                 LblAdFyt.Text = "0";
@@ -142,15 +121,32 @@ namespace MarketOtomasyonu
             txtAdet.Text = "1";
            // DgwHarcamalar.Rows.Clear();
             TxtBarkod.Focus();
+            dataGridView1.Rows.Clear();
         }
 
         private void BtnFaturaKes_Click(object sender, EventArgs e)
         {
             pdfKaydet(dataGridView1);
-            Temizle();           
+            Temizle();
+            FnkIslemler();
+        }
+
+        //stoktan adet düşme ve yapılan işlemi veri tabanına kaydetmek için
+        void FnkIslemler()
+        {
+            for (int i = 0; i <Barkodlar.Count; i++)
+            {              
+               prc.PrcTblIslemler_Insert(FrmGiris.KulId,DateTime.Now,UrunIdler[i],Barkodlar[i],Adetler[i]);
+            }
+
         }
 
 
+
+
+
+
+        //fiş kesme işlemi
        void pdfKaydet(DataGridView veriTablosu)
         {
             string Tahoma = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Tahoma.TTF");
@@ -210,5 +206,15 @@ namespace MarketOtomasyonu
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            
+        }
+
+
+
+
+
     }
 }
