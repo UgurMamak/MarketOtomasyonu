@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.TapControl = new MaterialSkin.Controls.MaterialTabControl();
@@ -72,6 +72,8 @@
             this.txtBarkod = new System.Windows.Forms.TextBox();
             this.BtnEkle = new MetroFramework.Controls.MetroButton();
             this.TpRapor = new System.Windows.Forms.TabPage();
+            this.LblTarih = new MetroFramework.Controls.MetroLabel();
+            this.dtpTarih = new MetroFramework.Controls.MetroDateTime();
             this.LblGider = new MetroFramework.Controls.MetroLabel();
             this.LblNet = new MetroFramework.Controls.MetroLabel();
             this.LblGelir = new MetroFramework.Controls.MetroLabel();
@@ -86,7 +88,9 @@
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnAnasayfa = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.cmbAylar = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.TapControl.SuspendLayout();
             this.TpAnaSayfa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwStok)).BeginInit();
@@ -143,14 +147,17 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(431, 15);
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(450, 12);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(125, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(141, 19);
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "STOKTAKİ ÜRÜNLER";
             // 
             // dgwStok
             // 
+            this.dgwStok.BackgroundColor = System.Drawing.Color.White;
+            this.dgwStok.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwStok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwStok.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -159,7 +166,7 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dgwStok.Location = new System.Drawing.Point(166, 37);
+            this.dgwStok.Location = new System.Drawing.Point(205, 34);
             this.dgwStok.Name = "dgwStok";
             this.dgwStok.Size = new System.Drawing.Size(643, 280);
             this.dgwStok.TabIndex = 0;
@@ -209,7 +216,7 @@
             // 
             // BtnDosyaAc
             // 
-            this.BtnDosyaAc.Location = new System.Drawing.Point(317, 6);
+            this.BtnDosyaAc.Location = new System.Drawing.Point(372, 20);
             this.BtnDosyaAc.Name = "BtnDosyaAc";
             this.BtnDosyaAc.Size = new System.Drawing.Size(104, 46);
             this.BtnDosyaAc.TabIndex = 8;
@@ -221,7 +228,7 @@
             // 
             this.DgwUrunler.AllowUserToAddRows = false;
             this.DgwUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgwUrunler.Location = new System.Drawing.Point(56, 58);
+            this.DgwUrunler.Location = new System.Drawing.Point(111, 72);
             this.DgwUrunler.Name = "DgwUrunler";
             this.DgwUrunler.Size = new System.Drawing.Size(836, 233);
             this.DgwUrunler.TabIndex = 7;
@@ -229,7 +236,7 @@
             // BtnStokKaydet
             // 
             this.BtnStokKaydet.Enabled = false;
-            this.BtnStokKaydet.Location = new System.Drawing.Point(447, 6);
+            this.BtnStokKaydet.Location = new System.Drawing.Point(502, 20);
             this.BtnStokKaydet.Name = "BtnStokKaydet";
             this.BtnStokKaydet.Size = new System.Drawing.Size(96, 46);
             this.BtnStokKaydet.TabIndex = 6;
@@ -266,15 +273,15 @@
             // 
             // txtGelisFiyat
             // 
-            this.txtGelisFiyat.Location = new System.Drawing.Point(304, 77);
+            this.txtGelisFiyat.Location = new System.Drawing.Point(155, 86);
             this.txtGelisFiyat.Name = "txtGelisFiyat";
-            this.txtGelisFiyat.Size = new System.Drawing.Size(171, 20);
-            this.txtGelisFiyat.TabIndex = 24;
+            this.txtGelisFiyat.Size = new System.Drawing.Size(119, 20);
+            this.txtGelisFiyat.TabIndex = 2;
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(659, 78);
+            this.metroLabel3.Location = new System.Drawing.Point(155, 258);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(228, 19);
             this.metroLabel3.TabIndex = 23;
@@ -283,7 +290,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(659, 113);
+            this.metroLabel2.Location = new System.Drawing.Point(155, 291);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(242, 19);
             this.metroLabel2.TabIndex = 22;
@@ -292,9 +299,9 @@
             // btnStokGuncelle
             // 
             this.btnStokGuncelle.Enabled = false;
-            this.btnStokGuncelle.Location = new System.Drawing.Point(504, 112);
+            this.btnStokGuncelle.Location = new System.Drawing.Point(38, 290);
             this.btnStokGuncelle.Name = "btnStokGuncelle";
-            this.btnStokGuncelle.Size = new System.Drawing.Size(149, 20);
+            this.btnStokGuncelle.Size = new System.Drawing.Size(111, 20);
             this.btnStokGuncelle.TabIndex = 21;
             this.btnStokGuncelle.Text = "STOK GÜNCELLE";
             this.btnStokGuncelle.UseSelectable = true;
@@ -302,31 +309,31 @@
             // 
             // txtStok
             // 
-            this.txtStok.Location = new System.Drawing.Point(304, 144);
+            this.txtStok.Location = new System.Drawing.Point(155, 152);
             this.txtStok.Name = "txtStok";
-            this.txtStok.Size = new System.Drawing.Size(171, 20);
-            this.txtStok.TabIndex = 20;
+            this.txtStok.Size = new System.Drawing.Size(119, 20);
+            this.txtStok.TabIndex = 4;
             // 
             // TxtBirimFyt
             // 
-            this.TxtBirimFyt.Location = new System.Drawing.Point(304, 112);
+            this.TxtBirimFyt.Location = new System.Drawing.Point(155, 121);
             this.TxtBirimFyt.Name = "TxtBirimFyt";
-            this.TxtBirimFyt.Size = new System.Drawing.Size(171, 20);
-            this.TxtBirimFyt.TabIndex = 20;
+            this.TxtBirimFyt.Size = new System.Drawing.Size(119, 20);
+            this.TxtBirimFyt.TabIndex = 3;
             // 
             // TxtUrunAd
             // 
-            this.TxtUrunAd.Location = new System.Drawing.Point(304, 44);
+            this.TxtUrunAd.Location = new System.Drawing.Point(155, 53);
             this.TxtUrunAd.Name = "TxtUrunAd";
-            this.TxtUrunAd.Size = new System.Drawing.Size(171, 20);
-            this.TxtUrunAd.TabIndex = 19;
+            this.TxtUrunAd.Size = new System.Drawing.Size(119, 20);
+            this.TxtUrunAd.TabIndex = 1;
             // 
             // BtnSil
             // 
             this.BtnSil.Enabled = false;
-            this.BtnSil.Location = new System.Drawing.Point(504, 45);
+            this.BtnSil.Location = new System.Drawing.Point(38, 227);
             this.BtnSil.Name = "BtnSil";
-            this.BtnSil.Size = new System.Drawing.Size(149, 23);
+            this.BtnSil.Size = new System.Drawing.Size(111, 20);
             this.BtnSil.TabIndex = 17;
             this.BtnSil.Text = "ÜRÜN ÇIKAR";
             this.BtnSil.UseSelectable = true;
@@ -335,9 +342,9 @@
             // BtnGuncelle
             // 
             this.BtnGuncelle.Enabled = false;
-            this.BtnGuncelle.Location = new System.Drawing.Point(504, 78);
+            this.BtnGuncelle.Location = new System.Drawing.Point(38, 258);
             this.BtnGuncelle.Name = "BtnGuncelle";
-            this.BtnGuncelle.Size = new System.Drawing.Size(149, 19);
+            this.BtnGuncelle.Size = new System.Drawing.Size(111, 19);
             this.BtnGuncelle.TabIndex = 15;
             this.BtnGuncelle.Text = "ÜRÜN GÜNCELLE";
             this.BtnGuncelle.UseSelectable = true;
@@ -349,7 +356,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(199, 80);
+            this.materialLabel5.Location = new System.Drawing.Point(50, 89);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(83, 19);
@@ -362,7 +369,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(203, 143);
+            this.materialLabel4.Location = new System.Drawing.Point(54, 152);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(40, 19);
@@ -376,14 +383,14 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
@@ -392,31 +399,31 @@
             this.Column10,
             this.Column11,
             this.Column12});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle11;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(149, 170);
+            this.metroGrid1.Location = new System.Drawing.Point(398, 6);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(651, 162);
+            this.metroGrid1.Size = new System.Drawing.Size(645, 326);
             this.metroGrid1.TabIndex = 18;
             // 
             // Column7
@@ -455,7 +462,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(203, 113);
+            this.materialLabel3.Location = new System.Drawing.Point(54, 122);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(79, 19);
@@ -468,7 +475,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(199, 45);
+            this.materialLabel2.Location = new System.Drawing.Point(50, 54);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(66, 19);
@@ -481,7 +488,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(199, 11);
+            this.materialLabel1.Location = new System.Drawing.Point(50, 20);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(56, 19);
@@ -490,18 +497,18 @@
             // 
             // txtBarkod
             // 
-            this.txtBarkod.Location = new System.Drawing.Point(304, 10);
+            this.txtBarkod.Location = new System.Drawing.Point(155, 19);
             this.txtBarkod.Name = "txtBarkod";
-            this.txtBarkod.Size = new System.Drawing.Size(171, 20);
-            this.txtBarkod.TabIndex = 11;
+            this.txtBarkod.Size = new System.Drawing.Size(119, 20);
+            this.txtBarkod.TabIndex = 0;
             this.txtBarkod.TextChanged += new System.EventHandler(this.txtBarkod_TextChanged);
             // 
             // BtnEkle
             // 
             this.BtnEkle.Enabled = false;
-            this.BtnEkle.Location = new System.Drawing.Point(504, 11);
+            this.BtnEkle.Location = new System.Drawing.Point(38, 197);
             this.BtnEkle.Name = "BtnEkle";
-            this.BtnEkle.Size = new System.Drawing.Size(149, 20);
+            this.BtnEkle.Size = new System.Drawing.Size(111, 20);
             this.BtnEkle.TabIndex = 14;
             this.BtnEkle.Text = "YENİ ÜRÜN EKLE";
             this.BtnEkle.UseSelectable = true;
@@ -510,10 +517,13 @@
             // TpRapor
             // 
             this.TpRapor.BackColor = System.Drawing.Color.White;
-            this.TpRapor.Controls.Add(this.label1);
+            this.TpRapor.Controls.Add(this.cmbAylar);
+            this.TpRapor.Controls.Add(this.LblTarih);
+            this.TpRapor.Controls.Add(this.dtpTarih);
             this.TpRapor.Controls.Add(this.LblGider);
             this.TpRapor.Controls.Add(this.LblNet);
             this.TpRapor.Controls.Add(this.LblGelir);
+            this.TpRapor.Controls.Add(this.metroLabel7);
             this.TpRapor.Controls.Add(this.metroLabel5);
             this.TpRapor.Controls.Add(this.metroLabel6);
             this.TpRapor.Controls.Add(this.metroLabel4);
@@ -525,62 +535,90 @@
             this.TpRapor.TabIndex = 3;
             this.TpRapor.Text = "Rapor";
             // 
+            // LblTarih
+            // 
+            this.LblTarih.AutoSize = true;
+            this.LblTarih.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LblTarih.Location = new System.Drawing.Point(130, 19);
+            this.LblTarih.Name = "LblTarih";
+            this.LblTarih.Size = new System.Drawing.Size(40, 19);
+            this.LblTarih.TabIndex = 4;
+            this.LblTarih.Text = "tarih";
+            // 
+            // dtpTarih
+            // 
+            this.dtpTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTarih.Location = new System.Drawing.Point(130, 44);
+            this.dtpTarih.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpTarih.Name = "dtpTarih";
+            this.dtpTarih.Size = new System.Drawing.Size(200, 29);
+            this.dtpTarih.TabIndex = 3;
+            this.dtpTarih.ValueChanged += new System.EventHandler(this.dtpTarih_ValueChanged);
+            // 
             // LblGider
             // 
             this.LblGider.AutoSize = true;
-            this.LblGider.Location = new System.Drawing.Point(71, 43);
+            this.LblGider.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LblGider.Location = new System.Drawing.Point(403, 44);
             this.LblGider.Name = "LblGider";
-            this.LblGider.Size = new System.Drawing.Size(33, 19);
+            this.LblGider.Size = new System.Drawing.Size(41, 19);
             this.LblGider.TabIndex = 1;
             this.LblGider.Text = "........";
             // 
             // LblNet
             // 
             this.LblNet.AutoSize = true;
-            this.LblNet.Location = new System.Drawing.Point(71, 106);
+            this.LblNet.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LblNet.Location = new System.Drawing.Point(644, 44);
             this.LblNet.Name = "LblNet";
-            this.LblNet.Size = new System.Drawing.Size(33, 19);
+            this.LblNet.Size = new System.Drawing.Size(41, 19);
             this.LblNet.TabIndex = 1;
             this.LblNet.Text = "........";
             // 
             // LblGelir
             // 
             this.LblGelir.AutoSize = true;
-            this.LblGelir.Location = new System.Drawing.Point(71, 72);
+            this.LblGelir.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LblGelir.Location = new System.Drawing.Point(526, 44);
             this.LblGelir.Name = "LblGelir";
-            this.LblGelir.Size = new System.Drawing.Size(33, 19);
+            this.LblGelir.Size = new System.Drawing.Size(41, 19);
             this.LblGelir.TabIndex = 1;
             this.LblGelir.Text = "........";
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(23, 43);
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel5.Location = new System.Drawing.Point(349, 44);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(53, 19);
             this.metroLabel5.TabIndex = 1;
             this.metroLabel5.Text = "GİDER:";
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(23, 106);
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel6.Location = new System.Drawing.Point(596, 44);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(41, 19);
             this.metroLabel6.TabIndex = 1;
             this.metroLabel6.Text = "KAR:";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(23, 72);
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel4.Location = new System.Drawing.Point(475, 44);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(50, 19);
             this.metroLabel4.TabIndex = 1;
             this.metroLabel4.Text = "GELİR:";
             // 
             // dgwIslemler
             // 
+            this.dgwIslemler.BackgroundColor = System.Drawing.Color.White;
+            this.dgwIslemler.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgwIslemler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwIslemler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,
@@ -590,7 +628,7 @@
             this.Column18,
             this.Column19,
             this.Column17});
-            this.dgwIslemler.Location = new System.Drawing.Point(170, 72);
+            this.dgwIslemler.Location = new System.Drawing.Point(130, 79);
             this.dgwIslemler.Name = "dgwIslemler";
             this.dgwIslemler.Size = new System.Drawing.Size(746, 208);
             this.dgwIslemler.TabIndex = 0;
@@ -630,20 +668,59 @@
             this.Column17.HeaderText = "Adet";
             this.Column17.Name = "Column17";
             // 
-            // label1
+            // btnAnasayfa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(267, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.btnAnasayfa.Depth = 0;
+            this.btnAnasayfa.Location = new System.Drawing.Point(1, 24);
+            this.btnAnasayfa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAnasayfa.Name = "btnAnasayfa";
+            this.btnAnasayfa.Primary = true;
+            this.btnAnasayfa.Size = new System.Drawing.Size(133, 33);
+            this.btnAnasayfa.TabIndex = 2;
+            this.btnAnasayfa.Text = "Ana Sayfaya Dön";
+            this.btnAnasayfa.UseVisualStyleBackColor = true;
+            this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
+            // 
+            // cmbAylar
+            // 
+            this.cmbAylar.FormattingEnabled = true;
+            this.cmbAylar.ItemHeight = 23;
+            this.cmbAylar.Items.AddRange(new object[] {
+            "Ocak",
+            "Şubat",
+            "Mart",
+            "Nisan",
+            "Mayıs",
+            "Haziran",
+            "Temmuz",
+            "Ağustos",
+            "Eylül",
+            "Ekim",
+            "Kasım",
+            "Aralık"});
+            this.cmbAylar.Location = new System.Drawing.Point(746, 44);
+            this.cmbAylar.Name = "cmbAylar";
+            this.cmbAylar.Size = new System.Drawing.Size(130, 29);
+            this.cmbAylar.TabIndex = 5;
+            this.cmbAylar.UseSelectable = true;
+            this.cmbAylar.SelectedIndexChanged += new System.EventHandler(this.cmbAylar_SelectedIndexChanged);
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel7.Location = new System.Drawing.Point(746, 19);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel7.TabIndex = 1;
+            this.metroLabel7.Text = "Ay:";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 503);
+            this.ClientSize = new System.Drawing.Size(1054, 462);
+            this.Controls.Add(this.btnAnasayfa);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.TapControl);
             this.Name = "Form2";
@@ -720,6 +797,10 @@
         private MetroFramework.Controls.MetroLabel LblNet;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroDateTime dtpTarih;
+        private MetroFramework.Controls.MetroLabel LblTarih;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAnasayfa;
+        private MetroFramework.Controls.MetroComboBox cmbAylar;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
     }
 }

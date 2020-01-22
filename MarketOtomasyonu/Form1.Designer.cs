@@ -1,6 +1,6 @@
 ﻿namespace MarketOtomasyonu
 {
-    partial class BtnKullanici
+    partial class FrmAnaSayfa
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@
             // 
             // btncikis
             // 
-            this.btncikis.Location = new System.Drawing.Point(359, 82);
+            this.btncikis.Location = new System.Drawing.Point(365, 65);
             this.btncikis.Name = "btncikis";
             this.btncikis.Size = new System.Drawing.Size(57, 33);
             this.btncikis.TabIndex = 3;
@@ -72,7 +72,7 @@
             this.btncikis.UseSelectable = true;
             this.btncikis.Click += new System.EventHandler(this.btncikis_Click);
             // 
-            // BtnKullanici
+            // FrmAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,7 +81,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BtnHesapla);
             this.Controls.Add(this.BtnUrunIslem);
-            this.Name = "BtnKullanici";
+            this.Name = "FrmAnaSayfa";
             this.Text = "ANA SAYFA";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

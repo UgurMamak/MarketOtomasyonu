@@ -27,7 +27,8 @@ namespace MarketOtomasyonu
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
+            //skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
+            skinManager.ColorScheme = new ColorScheme(Primary.Lime800, Primary.Lime900, Primary.Lime500, Accent.Lime100, TextShade.WHITE);
         }
 
         SqlDataReader reader;
@@ -80,7 +81,7 @@ namespace MarketOtomasyonu
             FnkStokList();
             FnkListele();
             FnkIslemlerList(DateTime.Today.ToString("dd/MM/yyyy"));
-            label1.Text = DateTime.Today.ToString("dd/MM/yyyy"); 
+            LblTarih.Text = DateTime.Today.ToString("dd/MM/yyyy"); 
         }      
 
         //tablodaki verileri DB ye kaydetmek için oluşturduğum metot
@@ -311,6 +312,8 @@ namespace MarketOtomasyonu
         double gider = 0;
         void FnkIslemlerList(string tarih)
         {
+            gider = 0;
+            gelir = 0;
             dgwIslemler.Rows.Clear();
             reader = islem.PrcTblIslemler_Select();
             while(reader.Read())
@@ -321,8 +324,9 @@ namespace MarketOtomasyonu
 
                     //4 geliş
                     //5 satış
-                    gider = gider + Convert.ToDouble(reader[4].ToString());
-                    gelir = gelir + Convert.ToDouble(reader[5].ToString());
+                    gider = gider + (Convert.ToDouble(reader[6].ToString())* Convert.ToDouble(reader[4].ToString()));
+                    gelir = gelir + (Convert.ToDouble(reader[6].ToString()) * Convert.ToDouble(reader[5].ToString()));
+
                     dgwIslemler.Rows.Add(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), reader[6].ToString());
                 }
             }
@@ -335,8 +339,54 @@ namespace MarketOtomasyonu
             LblGelir.Text = gelir.ToString();
             LblGider.Text = gider.ToString();
             LblNet.Text = (gelir - gider).ToString();
+            
         }
 
-       
+        private void dtpTarih_ValueChanged(object sender, EventArgs e)
+        {
+              FnkIslemlerList(dtpTarih.Value.ToString("dd/MM/yyyy"));
+            LblTarih.Text = dtpTarih.Value.ToString("dd/MM/yyyy");
+
+
+        }
+
+        private void btnAnasayfa_Click(object sender, EventArgs e)
+        {
+            FrmAnaSayfa yeni = new FrmAnaSayfa();
+            yeni.Show();
+            this.Close();
+        }
+
+
+        void FnkAylikList(int ay)
+        {
+            gider = 0;
+            gelir = 0;
+            dgwIslemler.Rows.Clear();
+            reader = islem.PrcTblIslemler_Select();
+            while (reader.Read())
+            {
+                DateTime dbtarih = Convert.ToDateTime(reader[2].ToString());
+                if (ay == Convert.ToInt32(dbtarih.ToString("MM")))
+                {
+
+                    //4 geliş
+                    //5 satış
+                    gider = gider + (Convert.ToDouble(reader[6].ToString()) * Convert.ToDouble(reader[4].ToString()));
+                    gelir = gelir + (Convert.ToDouble(reader[6].ToString()) * Convert.ToDouble(reader[5].ToString()));
+
+                    dgwIslemler.Rows.Add(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), reader[6].ToString());
+                }
+            }
+            FnkGelirHesapla();
+        }
+
+
+
+
+        private void cmbAylar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FnkAylikList(cmbAylar.SelectedIndex+1);
+        }
     }
 }

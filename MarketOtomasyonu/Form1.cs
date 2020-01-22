@@ -14,24 +14,25 @@ using MetroFramework;
 
 namespace MarketOtomasyonu
 {
-    public partial class BtnKullanici : MaterialForm
+    public partial class FrmAnaSayfa : MaterialForm
     {
-        public BtnKullanici()
+        public FrmAnaSayfa()
         {
             InitializeComponent();
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
-           
+            // skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
+            skinManager.ColorScheme = new ColorScheme(Primary.Lime800, Primary.Lime900, Primary.Lime500, Accent.Lime100, TextShade.WHITE);
 
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            FrmUrunEkle frm = new FrmUrunEkle();
+           
+            Form2 frm = new Form2();
             frm.Show();
-            this.Hide();            
+            this.Hide();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)

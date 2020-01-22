@@ -42,7 +42,6 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.LblAdFyt = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.BtnGeri = new MetroFramework.Controls.MetroButton();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.BtnFaturaKes = new MaterialSkin.Controls.MaterialFlatButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -51,12 +50,14 @@
             this.BirimFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urunadet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FiyatAdet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnGeri = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCikisYap = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtBarkod
             // 
-            this.TxtBarkod.Location = new System.Drawing.Point(16, 128);
+            this.TxtBarkod.Location = new System.Drawing.Point(21, 104);
             this.TxtBarkod.Name = "TxtBarkod";
             this.TxtBarkod.Size = new System.Drawing.Size(214, 20);
             this.TxtBarkod.TabIndex = 0;
@@ -69,7 +70,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 175);
+            this.materialLabel1.Location = new System.Drawing.Point(17, 151);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(56, 19);
@@ -82,7 +83,7 @@
             this.LblBarkod.Depth = 0;
             this.LblBarkod.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblBarkod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblBarkod.Location = new System.Drawing.Point(121, 175);
+            this.LblBarkod.Location = new System.Drawing.Point(126, 151);
             this.LblBarkod.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblBarkod.Name = "LblBarkod";
             this.LblBarkod.Size = new System.Drawing.Size(109, 19);
@@ -95,7 +96,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(12, 222);
+            this.materialLabel3.Location = new System.Drawing.Point(17, 198);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(40, 19);
@@ -108,7 +109,7 @@
             this.LblUrun.Depth = 0;
             this.LblUrun.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblUrun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblUrun.Location = new System.Drawing.Point(121, 222);
+            this.LblUrun.Location = new System.Drawing.Point(126, 198);
             this.LblUrun.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblUrun.Name = "LblUrun";
             this.LblUrun.Size = new System.Drawing.Size(109, 19);
@@ -121,7 +122,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(12, 362);
+            this.materialLabel5.Location = new System.Drawing.Point(17, 338);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(96, 19);
@@ -134,7 +135,7 @@
             this.LblToplamFiyat.Depth = 0;
             this.LblToplamFiyat.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblToplamFiyat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblToplamFiyat.Location = new System.Drawing.Point(121, 362);
+            this.LblToplamFiyat.Location = new System.Drawing.Point(126, 338);
             this.LblToplamFiyat.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblToplamFiyat.Name = "LblToplamFiyat";
             this.LblToplamFiyat.Size = new System.Drawing.Size(109, 19);
@@ -147,7 +148,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(12, 274);
+            this.materialLabel2.Location = new System.Drawing.Point(17, 250);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(80, 19);
@@ -160,7 +161,7 @@
             this.LblBirimFiyat.Depth = 0;
             this.LblBirimFiyat.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblBirimFiyat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblBirimFiyat.Location = new System.Drawing.Point(121, 274);
+            this.LblBirimFiyat.Location = new System.Drawing.Point(126, 250);
             this.LblBirimFiyat.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblBirimFiyat.Name = "LblBirimFiyat";
             this.LblBirimFiyat.Size = new System.Drawing.Size(109, 19);
@@ -169,7 +170,7 @@
             // 
             // txtAdet
             // 
-            this.txtAdet.Location = new System.Drawing.Point(58, 102);
+            this.txtAdet.Location = new System.Drawing.Point(63, 78);
             this.txtAdet.Name = "txtAdet";
             this.txtAdet.Size = new System.Drawing.Size(60, 20);
             this.txtAdet.TabIndex = 10;
@@ -181,7 +182,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(12, 319);
+            this.materialLabel4.Location = new System.Drawing.Point(17, 295);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(89, 19);
@@ -194,7 +195,7 @@
             this.LblAdFyt.Depth = 0;
             this.LblAdFyt.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblAdFyt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblAdFyt.Location = new System.Drawing.Point(121, 319);
+            this.LblAdFyt.Location = new System.Drawing.Point(126, 295);
             this.LblAdFyt.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblAdFyt.Name = "LblAdFyt";
             this.LblAdFyt.Size = new System.Drawing.Size(109, 19);
@@ -207,22 +208,12 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(12, 103);
+            this.materialLabel6.Location = new System.Drawing.Point(17, 79);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(40, 19);
             this.materialLabel6.TabIndex = 13;
             this.materialLabel6.Text = "Adet";
-            // 
-            // BtnGeri
-            // 
-            this.BtnGeri.Location = new System.Drawing.Point(0, 62);
-            this.BtnGeri.Name = "BtnGeri";
-            this.BtnGeri.Size = new System.Drawing.Size(94, 28);
-            this.BtnGeri.TabIndex = 14;
-            this.BtnGeri.Text = "AnaSayfaya Dön";
-            this.BtnGeri.UseSelectable = true;
-            this.BtnGeri.Click += new System.EventHandler(this.BtnGeri_Click);
             // 
             // serialPort1
             // 
@@ -234,7 +225,7 @@
             this.BtnFaturaKes.AutoSize = true;
             this.BtnFaturaKes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnFaturaKes.Depth = 0;
-            this.BtnFaturaKes.Location = new System.Drawing.Point(125, 394);
+            this.BtnFaturaKes.Location = new System.Drawing.Point(130, 370);
             this.BtnFaturaKes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnFaturaKes.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnFaturaKes.Name = "BtnFaturaKes";
@@ -286,14 +277,41 @@
             this.FiyatAdet.HeaderText = "FiyatXAdet";
             this.FiyatAdet.Name = "FiyatAdet";
             // 
+            // BtnGeri
+            // 
+            this.BtnGeri.Depth = 0;
+            this.BtnGeri.Location = new System.Drawing.Point(0, 25);
+            this.BtnGeri.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnGeri.Name = "BtnGeri";
+            this.BtnGeri.Primary = true;
+            this.BtnGeri.Size = new System.Drawing.Size(157, 39);
+            this.BtnGeri.TabIndex = 18;
+            this.BtnGeri.Text = "Ana sayfaya dön";
+            this.BtnGeri.UseVisualStyleBackColor = true;
+            this.BtnGeri.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            // 
+            // btnCikisYap
+            // 
+            this.btnCikisYap.Depth = 0;
+            this.btnCikisYap.Location = new System.Drawing.Point(838, 41);
+            this.btnCikisYap.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCikisYap.Name = "btnCikisYap";
+            this.btnCikisYap.Primary = true;
+            this.btnCikisYap.Size = new System.Drawing.Size(75, 23);
+            this.btnCikisYap.TabIndex = 19;
+            this.btnCikisYap.Text = "Çıkış Yap";
+            this.btnCikisYap.UseVisualStyleBackColor = true;
+            this.btnCikisYap.Click += new System.EventHandler(this.btnCikisYap_Click);
+            // 
             // FrmIslemler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 460);
+            this.Controls.Add(this.btnCikisYap);
+            this.Controls.Add(this.BtnGeri);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnFaturaKes);
-            this.Controls.Add(this.BtnGeri);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.LblAdFyt);
             this.Controls.Add(this.materialLabel4);
@@ -308,7 +326,6 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.TxtBarkod);
             this.Name = "FrmIslemler";
-            this.Text = "HESAPLA";
             this.Load += new System.EventHandler(this.FrmIslemler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -331,7 +348,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel LblAdFyt;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MetroFramework.Controls.MetroButton BtnGeri;
         private System.IO.Ports.SerialPort serialPort1;
         private MaterialSkin.Controls.MaterialFlatButton BtnFaturaKes;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -340,5 +356,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BirimFiyat;
         private System.Windows.Forms.DataGridViewTextBoxColumn urunadet;
         private System.Windows.Forms.DataGridViewTextBoxColumn FiyatAdet;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnGeri;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCikisYap;
     }
 }

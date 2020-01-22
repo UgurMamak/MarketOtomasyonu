@@ -29,8 +29,13 @@ namespace MarketOtomasyonu
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
-            if (FrmGiris.KullaniciTip.ToString() == "kullanıcı") BtnGeri.Visible = false;
+            // skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
+            skinManager.ColorScheme = new ColorScheme(Primary.Lime800, Primary.Lime900, Primary.Lime500, Accent.Lime100, TextShade.WHITE);
+            if (FrmGiris.KullaniciTip.ToString() == "kullanıcı")
+            { 
+            BtnGeri.Visible = false;
+                
+            }
             //Application.Idle += new EventHandler(FnkBarkodYakala);
            
         }
@@ -100,12 +105,7 @@ namespace MarketOtomasyonu
 
         }
 
-        private void BtnGeri_Click(object sender, EventArgs e)
-        {
-            BtnKullanici yeni = new BtnKullanici();
-            yeni.Show();
-            this.Close();
-        }
+     
 
         void Temizle()
         {
@@ -212,9 +212,18 @@ namespace MarketOtomasyonu
             
         }
 
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            FrmAnaSayfa yeni = new FrmAnaSayfa();
+            yeni.Show();
+            this.Close();
+        }
 
-
-
-
+        private void btnCikisYap_Click(object sender, EventArgs e)
+        {
+            FrmGiris yeni = new FrmGiris();
+            yeni.Show();
+            this.Close();
+        }
     }
 }

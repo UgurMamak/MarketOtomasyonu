@@ -24,7 +24,7 @@ namespace MarketOtomasyonu
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.Green100, TextShade.WHITE);
+            skinManager.ColorScheme = new ColorScheme(Primary.Lime800, Primary.Lime900, Primary.Lime500, Accent.Lime100, TextShade.WHITE);
 
         }
         VtIslemler prc = new VtIslemler();
@@ -52,7 +52,7 @@ namespace MarketOtomasyonu
                     }
                     else
                     {
-                        BtnKullanici yeni = new BtnKullanici();
+                        FrmAnaSayfa yeni = new FrmAnaSayfa();
                         yeni.Show();
                         this.Hide();
                     }                                        
